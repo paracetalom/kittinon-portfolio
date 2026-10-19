@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# original documents (contain names and student IDs): keep them out of the published site
+source-docs/
