@@ -110,10 +110,10 @@
   --veil: rgba(255, 255, 255, 0.55);
   --veil-strong: rgba(255, 255, 255, 0.86);
   --tint: rgba(10, 10, 16, 0.05);
-  /* accent = electric blue (text, rings, links); pop = hot pink (fills, hovers) */
+  /* accent = electric blue (text, rings, links); pop = acid lime (fills, hovers) */
   --accent: #2b1bff;
   --accent-ink: #ffffff;
-  --pop: #ff4fd8;
+  --pop: #c6ff3d;
   --pop-ink: #0a0a10;
   --accent-soft: rgba(43, 27, 255, 0.1);
   /* project status colours (darkened to read on paper) */
@@ -147,9 +147,9 @@
   --veil: rgba(255, 255, 255, 0.06);
   --veil-strong: rgba(255, 255, 255, 0.1);
   --tint: rgba(255, 255, 255, 0.08);
-  --accent: #ff4fd8;
+  --accent: #c6ff3d;
   --accent-ink: #0a0a10;
-  --accent-soft: rgba(255, 79, 216, 0.16);
+  --accent-soft: rgba(198, 255, 61, 0.16);
 }
 
 *,

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 /**
- * The site's own mouse pointer: a pink dot everywhere, a bigger ring over links and buttons, and a label over
+ * The site's own mouse pointer: a lime dot everywhere, a bigger ring over links and buttons, and a label over
  * anything marked data-cursor="Label". Only for devices with a mouse; touch screens keep their normal behaviour.
  * The real pointer is hidden while this one is running, except over the enlarged-picture dialog and videos.
  */

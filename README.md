@@ -12,11 +12,11 @@ Published with GitHub Pages: `https://paracetalom.github.io/kittinon-portfolio/`
 
 A poster-style layout that mixes three ideas, without copying any one site:
 
-- **Big pictures and colour that moves with you:** the page background drifts from grey to blue, pink and finally black
+- **Big pictures and colour that moves with you:** the page background drifts from grey to blue, lime and finally black
   while you scroll (`src/hooks/usePageTone.js`); project pictures play as a slow cross-fading slideshow.
 - **Lots of type that reacts:** a huge name whose letters roll into symbols on hover, and a Work index of giant
   project titles that fill with colour and pop a picture in. Rows fade in and out as you scroll.
-- **Unusual colour and perspective:** electric blue and hot pink on warm grey, a name that tilts in perspective with the
+- **Unusual colour and perspective:** electric blue and acid lime on warm grey, a name that tilts in perspective with the
   pointer, a tilted colour band that speeds up with the scroll speed, a floating pill navigation and a mouse label.
 
 Everything is plain CSS and small hooks, mostly `transform` and `opacity`. Colour tokens are in `src/index.css`.
