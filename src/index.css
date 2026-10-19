@@ -1,13 +1,13 @@
-/* Fonts are self-hosted (SIL Open Font License): Bricolage Grotesque, Instrument Sans, JetBrains Mono */
+/* Fonts are self-hosted (SIL Open Font License): Oswald, Inter Tight, JetBrains Mono */
 @font-face {
-  font-family: "Bricolage Grotesque";
-  src: url("./assets/fonts/bricolage-grotesque.woff2") format("woff2");
-  font-weight: 200 800;
+  font-family: "Oswald";
+  src: url("./assets/fonts/oswald.woff2") format("woff2");
+  font-weight: 300 700;
   font-display: swap;
 }
 @font-face {
-  font-family: "Instrument Sans";
-  src: url("./assets/fonts/instrument-sans.woff2") format("woff2");
+  font-family: "Inter Tight";
+  src: url("./assets/fonts/inter-tight.woff2") format("woff2");
   font-weight: 400 700;
   font-display: swap;
 }
@@ -18,34 +18,138 @@
   font-display: swap;
 }
 
-:root {
-  --bg: #050a14;
-  --bg-2: #08101f;
-  --surface: #0c1628;
-  --raise: #111e36;
-  --line: rgba(140, 170, 255, 0.13);
-  --line-strong: rgba(140, 170, 255, 0.3);
-  --text: #e7edf8;
-  --muted: #98a7c2;
-  --dim: #7a8aa6;
-  --accent: #72d8ea;
-  --accent-ink: #04222a;
-  --live: #63d6a5;
-  --proto: #f0b94f;
-  --docs: #8fa6ff;
-  --design: #b9a2ff;
-  --read: #98a7c2;
+@property --bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #e6e6e2;
+}
+@property --bg-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #dadad5;
+}
+@property --surface {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #f2f2ee;
+}
+@property --raise {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ffffff;
+}
+@property --text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #0a0a10;
+}
+@property --muted {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #3f3f4a;
+}
+@property --dim {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #565662;
+}
+@property --line {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(10,10,16,0.16);
+}
+@property --line-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(10,10,16,0.7);
+}
+@property --veil {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255,255,255,0.55);
+}
+@property --veil-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255,255,255,0.86);
+}
+@property --tint {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(10,10,16,0.05);
+}
+@property --accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #2b1bff;
+}
+@property --accent-ink {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ffffff;
+}
+@property --accent-soft {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(43,27,255,0.1);
+}
 
-  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+:root {
+  /* paper + ink */
+  --bg: #e6e6e2;
+  --bg-2: #dadad5;
+  --surface: #f2f2ee;
+  --raise: #ffffff;
+  --ink: #0a0a10;
+  --line: rgba(10, 10, 16, 0.16);
+  --line-strong: rgba(10, 10, 16, 0.7);
+  --text: #0a0a10;
+  --muted: #3f3f4a;
+  --dim: #565662;
+  /* translucent veils over the paper (replace the old dark rgba fills) */
+  --veil: rgba(255, 255, 255, 0.55);
+  --veil-strong: rgba(255, 255, 255, 0.86);
+  --tint: rgba(10, 10, 16, 0.05);
+  /* accent = electric blue (text, rings, links); pop = hot pink (fills, hovers) */
+  --accent: #2b1bff;
+  --accent-ink: #ffffff;
+  --pop: #ff4fd8;
+  --pop-ink: #0a0a10;
+  --accent-soft: rgba(43, 27, 255, 0.1);
+  /* project status colours (darkened to read on paper) */
+  --live: #0a7a50;
+  --proto: #8a5a00;
+  --docs: #3547c9;
+  --design: #7234c9;
+  --read: #565662;
+
+  --font-display: "Oswald", "Impact", "Arial Narrow", sans-serif;
+  --font-body: "Inter Tight", "Segoe UI", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
 
-  --wrap: 1180px;
+  --wrap: 1475px;
   --gutter: clamp(20px, 5vw, 56px);
   --nav-h: 68px;
-  --radius: 10px;
+  --radius: 4px;
   --ease: cubic-bezier(0.22, 0.8, 0.24, 1);
-  color-scheme: dark;
+  color-scheme: light;
+  transition: --bg 0.25s linear, --bg-2 0.25s linear, --surface 0.25s linear, --raise 0.7s ease, --text 0.7s ease, --muted 0.7s ease, --dim 0.7s ease, --line 0.7s ease, --line-strong 0.7s ease, --veil 0.7s ease, --veil-strong 0.7s ease, --tint 0.7s ease, --accent 0.7s ease, --accent-ink 0.7s ease, --accent-soft 0.7s ease;
+}
+
+/* past the middle of the fade to black the text tokens flip to light (see hooks/usePageTone.js) */
+:root[data-tone="dark"] {
+  --raise: #1d1d2a;
+  --text: #f2f2ee;
+  --muted: #cbcbd4;
+  --dim: #a7a7b4;
+  --line: rgba(242, 242, 238, 0.2);
+  --line-strong: rgba(242, 242, 238, 0.6);
+  --veil: rgba(255, 255, 255, 0.06);
+  --veil-strong: rgba(255, 255, 255, 0.1);
+  --tint: rgba(255, 255, 255, 0.08);
+  --accent: #ff4fd8;
+  --accent-ink: #0a0a10;
+  --accent-soft: rgba(255, 79, 216, 0.16);
 }
 
 *,
@@ -55,56 +159,38 @@
 }
 
 html {
+  font-size: 80%; /* whole site at 80% */
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--nav-h) + 12px);
+  scroll-padding-top: 24px;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
+  padding-bottom: 88px; /* room for the floating nav */
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
   font-size: 1.0625rem;
-  line-height: 1.65;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 #root {
   min-height: 100vh;
-  /* faint blueprint grid behind everything */
-  background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 72px 72px;
-  background-position: -1px -1px;
-  background-attachment: fixed;
   background-color: var(--bg);
 }
-#root::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(ellipse at 50% 0%, transparent 0%, var(--bg) 78%);
-  opacity: 0.88;
-}
-#root > * {
-  position: relative;
-  z-index: 1;
-}
-
 h1,
 h2,
 h3,
 h4 {
   font-family: var(--font-display);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  line-height: 0.95;
+  letter-spacing: -0.005em;
   margin: 0;
-  font-weight: 600;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 p {
   margin: 0 0 1em;

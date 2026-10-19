@@ -7,7 +7,7 @@
   padding: 14px 18px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: rgba(8, 16, 31, 0.6);
+  background: var(--veil-strong);
   font-size: 0.82rem;
   color: var(--dim);
 }
@@ -66,11 +66,11 @@
   left: -0.04em;
   z-index: 0;
   font-family: var(--font-display);
-  font-size: clamp(6rem, 15vw, 12rem);
+  font-size: clamp(6rem, 12.0vw, 12rem);
   font-weight: 700;
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(140, 170, 255, 0.2);
+  -webkit-text-stroke: 1px var(--line-strong);
   pointer-events: none;
 }
 .case.flip .case-index {
@@ -103,7 +103,7 @@
 .media-main:hover {
   border-color: var(--accent);
   transform: translateY(-4px);
-  box-shadow: 0 24px 50px -28px rgba(114, 216, 234, 0.35);
+  box-shadow: none;
 }
 .media-main img {
   width: 100%;
@@ -126,7 +126,7 @@
   bottom: 12px;
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(5, 10, 20, 0.85);
+  background: var(--veil-strong);
   border: 1px solid var(--line-strong);
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -227,7 +227,7 @@
   overflow: auto;
 }
 .lightbox::backdrop {
-  background: rgba(3, 6, 12, 0.82);
+  background: var(--veil-strong);
   backdrop-filter: blur(4px);
 }
 .lightbox img {
@@ -270,7 +270,7 @@
   padding: 26px 24px;
   border: 1px solid var(--line-strong);
   border-radius: 12px;
-  background: repeating-linear-gradient(135deg, rgba(140, 170, 255, 0.04) 0 1px, transparent 1px 12px), var(--surface);
+  background: repeating-linear-gradient(135deg, var(--tint) 0 1px, transparent 1px 12px), var(--surface);
 }
 .flow-node {
   display: flex;
@@ -301,7 +301,7 @@
   color: var(--dim);
 }
 .flow-db {
-  border-color: rgba(240, 185, 79, 0.45);
+  border-color: rgba(138, 90, 0, 0.45);
 }
 .flow-db .mono {
   color: var(--proto);
@@ -355,7 +355,7 @@
   margin-bottom: 18px;
 }
 .pbody-title {
-  font-size: clamp(1.9rem, 3.4vw, 2.9rem);
+  font-size: clamp(1.9rem, 2.7vw, 2.9rem);
   letter-spacing: -0.03em;
 }
 .pbody-sub {
@@ -414,7 +414,7 @@
   padding: 12px 14px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: rgba(12, 22, 40, 0.7);
+  background: var(--veil-strong);
   transition: border-color 0.25s;
 }
 .docitem:hover {
@@ -423,7 +423,7 @@
 .docitem-tag {
   padding: 3px 7px;
   border-radius: 4px;
-  background: rgba(143, 166, 255, 0.14);
+  background: var(--accent-soft);
   color: var(--docs);
   font-family: var(--font-mono);
   font-size: 0.66rem;
@@ -468,7 +468,7 @@
   margin-bottom: 26px;
 }
 .explorer-title {
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-size: clamp(1.7rem, 2.4vw, 2.4rem);
 }
 .explorer-note {
   margin: 0;
@@ -489,7 +489,7 @@
   padding: 4px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(8, 16, 31, 0.7);
+  background: var(--veil-strong);
 }
 .seg button {
   display: inline-flex;
@@ -521,14 +521,14 @@
   padding: 7px 14px;
   border: 1px solid var(--accent);
   border-radius: 999px;
-  background: rgba(114, 216, 234, 0.1);
+  background: var(--accent-soft);
   color: var(--accent);
   cursor: pointer;
   font-family: var(--font-mono);
   font-size: 0.78rem;
 }
 .skill-pill:hover {
-  background: rgba(114, 216, 234, 0.2);
+  background: var(--accent-soft);
 }
 
 .explorer-grid {
@@ -583,7 +583,7 @@
   transition: background 0.25s, border-color 0.25s, transform 0.3s var(--ease);
 }
 .row:hover {
-  background: rgba(17, 30, 54, 0.6);
+  background: var(--veil);
   transform: translateX(4px);
 }
 .row.on {
@@ -634,7 +634,7 @@
   padding: clamp(20px, 3vw, 36px);
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: rgba(8, 16, 31, 0.65);
+  background: var(--veil-strong);
   outline: none;
 }
 .detail {

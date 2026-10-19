@@ -7,7 +7,7 @@
 }
 .about-lead {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
   line-height: 1.2;
   letter-spacing: -0.02em;
   font-weight: 500;
@@ -30,7 +30,7 @@
   transition: background 0.25s, padding 0.25s var(--ease);
 }
 .fact-row:hover {
-  background: rgba(17, 30, 54, 0.45);
+  background: var(--veil);
   padding-inline: 10px;
 }
 .fact-row dt {
@@ -78,7 +78,7 @@
   padding: 9px 12px 9px 16px;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
-  background: rgba(8, 16, 31, 0.7);
+  background: var(--veil-strong);
   cursor: pointer;
   font-size: 0.98rem;
   transition: background 0.25s var(--ease), color 0.25s, border-color 0.25s, transform 0.25s var(--ease);
@@ -94,7 +94,7 @@
   height: 22px;
   padding: 0 6px;
   border-radius: 999px;
-  background: rgba(140, 170, 255, 0.14);
+  background: var(--tint);
   font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--muted);
@@ -118,7 +118,7 @@
   padding: 22px 24px;
   border: 1px dashed var(--line-strong);
   border-radius: 12px;
-  background: rgba(8, 16, 31, 0.5);
+  background: var(--veil-strong);
 }
 .skill-panel p {
   margin: 0;
@@ -152,7 +152,7 @@
 /* ---------- contact ---------- */
 .contact {
   border-top: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(8, 16, 31, 0.5), transparent);
+  background: linear-gradient(180deg, var(--veil-strong), transparent);
 }
 .contact-grid {
   display: grid;
@@ -164,7 +164,7 @@
   max-width: 14em;
   margin-bottom: 30px;
   font-family: var(--font-display);
-  font-size: clamp(1.7rem, 3.4vw, 2.7rem);
+  font-size: clamp(1.7rem, 2.7vw, 2.7rem);
   line-height: 1.15;
   letter-spacing: -0.025em;
   font-weight: 500;

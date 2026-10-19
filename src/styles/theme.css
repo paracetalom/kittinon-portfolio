@@ -1,0 +1,484 @@
+/* Poster-style layer on top of the section styles: big type, hard edges, colour blocks, colour-on-hover pictures.
+   Loaded last so it can restyle the shared components without touching each section file. */
+
+/* ---------- section headings: huge, clipped by the viewport edge ---------- */
+.sechead h2 {
+  font-size: clamp(3.6rem, 11.2vw, 12rem);
+  line-height: 0.82;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-right: calc(var(--gutter) * -1);
+}
+.sechead-kicker span:first-child {
+  padding: 2px 8px;
+  background: var(--pop);
+  color: var(--pop-ink);
+}
+.sechead-rule {
+  background: var(--ink);
+  width: 96px;
+}
+[data-tone="dark"] .sechead-rule {
+  background: var(--text);
+}
+
+/* ---------- buttons: squared, hard colour change ---------- */
+.btn {
+  border-radius: 8px;
+  border-width: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 0.88rem;
+}
+.btn-solid {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+.btn-solid:hover {
+  background: var(--pop);
+  border-color: var(--ink);
+  color: var(--pop-ink);
+}
+.btn-line {
+  border-color: var(--text);
+}
+.btn-line:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+.chip-link,
+.copy,
+.lightbox-close,
+.seg,
+.skill,
+.skill-used button {
+  border-radius: 6px;
+}
+.chip-link:hover {
+  background: var(--pop);
+  border-color: var(--ink);
+  color: var(--pop-ink);
+}
+
+/* ---------- about / skills ---------- */
+.about-lead {
+  font-size: clamp(2rem, 3.4vw, 3.4rem);
+  line-height: 1.02;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+.fact-row:hover {
+  background: var(--pop);
+  color: var(--pop-ink);
+}
+.fact-row:hover dt,
+.fact-row:hover dd {
+  color: var(--pop-ink);
+}
+.skill {
+  border-color: var(--text);
+  background: transparent;
+}
+.skill:hover {
+  background: var(--pop);
+  border-color: var(--ink);
+  color: var(--pop-ink);
+}
+.skill-panel {
+  border-radius: 8px;
+}
+
+/* ---------- project cards ---------- */
+.case-index {
+  font-weight: 500;
+  -webkit-text-stroke: 1.5px var(--text);
+  opacity: 0.35;
+}
+.media-main,
+.media-main:hover {
+  border-radius: 8px;
+  border: 2px solid var(--ink);
+  box-shadow: none;
+}
+.media-main {
+  transition: transform 0.5s var(--ease);
+}
+.media-main:hover {
+  transform: translate(-4px, -4px) rotate(-0.6deg);
+}
+.media-thumbs img {
+  filter: grayscale(1);
+  transition: filter 0.4s ease;
+}
+.media-thumbs button:hover img,
+.media-thumbs button.on img {
+  filter: none;
+}
+.media-phone .media-main {
+  border-radius: 28px;
+}
+.media-zoom {
+  background: var(--pop);
+  color: var(--pop-ink);
+  border-color: var(--ink);
+  border-radius: 4px;
+}
+.lightbox {
+  border-radius: 8px;
+  border-color: var(--ink);
+}
+.lightbox::backdrop {
+  background: rgba(10, 10, 16, 0.7);
+  backdrop-filter: none;
+}
+.pbody-title {
+  font-size: clamp(2.6rem, 4.3vw, 4.8rem);
+  letter-spacing: 0;
+  line-height: 0.92;
+}
+.pbody-role {
+  border-left: 4px solid var(--pop);
+}
+.docitem,
+.legend,
+.flow,
+.flow-node {
+  border-radius: 6px;
+}
+.docitem:hover {
+  border-color: var(--ink);
+  background: var(--pop);
+}
+.subhead .mono {
+  border-bottom-color: var(--pop);
+  border-bottom-width: 3px;
+}
+
+/* explorer rows echo the work index */
+.row {
+  border-radius: 6px;
+}
+.row:hover {
+  border-color: var(--ink);
+  background: var(--pop);
+  color: var(--pop-ink);
+}
+
+/* ---------- contact: dark finale ---------- */
+.contact {
+  background: none;
+  border-top: 0;
+}
+.contact-big {
+  font-size: clamp(2.4rem, 4.8vw, 5.2rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  max-width: 12em;
+}
+.contact-value:hover {
+  color: var(--accent);
+}
+.footer {
+  border-top-color: var(--line);
+}
+
+/* ---------- focus ring stays visible on every colour ---------- */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+:root[data-section="home"] .wi:focus-visible,
+.wi:focus-visible {
+  outline-color: var(--ink);
+}
+.nav-links a:focus-visible,
+.nav-toggle:focus-visible,
+.nav-logo:focus-visible {
+  outline-color: var(--accent);
+}
+
+/* ---------- scroll reveal: a harder slide-up ---------- */
+.reveal {
+  transform: translateY(48px);
+  transition: opacity 0.7s var(--ease) var(--delay, 0ms), transform 0.9s var(--ease) var(--delay, 0ms);
+}
+.reveal.in-view {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* items still fade in one by one as they are reached, but without sliding */
+  .reveal {
+    transform: none;
+    transition-duration: 0.9s !important;
+  }
+  .media-main:hover {
+    transform: none;
+  }
+  :root {
+    transition: none;
+  }
+}
+
+/* ---------- video and mixed thumbnails ---------- */
+.video-box {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--ink);
+}
+.video-box iframe,
+.video-start {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-start {
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+.video-start img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+.video-start:hover img {
+  transform: scale(1.03);
+}
+.video-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  padding: 12px 22px;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: var(--pop);
+  color: var(--pop-ink);
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%) rotate(-4deg);
+  transition: transform 0.3s var(--ease);
+}
+.video-start:hover .video-play,
+.video-start:focus-visible .video-play {
+  transform: translate(-50%, -50%) rotate(0deg) scale(1.06);
+}
+.media-thumbs button {
+  position: relative;
+  border-radius: 6px;
+}
+.thumb-label {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.thumb-play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 0.8rem;
+  text-shadow: 0 0 4px #000;
+}
+.media-thumbs {
+  flex-wrap: wrap;
+}
+
+/* ---------- slideshow: progress line under the active thumbnail, pause button ---------- */
+.media-thumbs button.on::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--pop);
+  transform-origin: left;
+  transform: scaleX(0);
+}
+.media-thumbs.running button.on::after {
+  animation: slide-progress var(--slide-ms, 4500ms) linear forwards;
+}
+@keyframes slide-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+.media-thumbs .media-auto {
+  width: auto;
+  height: 54px;
+  padding: 0 12px;
+  border: 1.5px solid var(--text);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 1;
+}
+.media-thumbs .media-auto:hover {
+  background: var(--pop);
+  border-color: var(--ink);
+  color: var(--pop-ink);
+  transform: none;
+}
+
+/* every picture sits in the same frame so the page does not jump while the slideshow runs */
+.media-window .media-main img,
+.media-plain .media-main img {
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background: var(--raise);
+}
+.media-phone .media-main img {
+  aspect-ratio: 1 / 2;
+  object-fit: contain;
+  background: var(--raise);
+}
+.media figcaption {
+  min-height: 2.8em;
+}
+
+/* the slideshow is an opacity-only fade the visitor can pause, so it keeps its timing even with reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .media-img img:not(.media-prev) {
+    animation-duration: var(--fade-ms, 900ms) !important;
+  }
+  .media-thumbs.running button.on::after {
+    animation-duration: var(--slide-ms, 2000ms) !important;
+  }
+}
+
+/* cross-fade: the old picture stays underneath, the new one fades in slowly */
+.media-img {
+  position: relative;
+  display: block;
+}
+.media-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  animation: media-fade var(--fade-ms, 900ms) ease-in-out both;
+}
+.media-img img.media-prev {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  animation: none;
+}
+@keyframes media-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* work index rows come in one at a time, a little lower and slower than the cards */
+.wi-list .reveal {
+  transform: translateY(28px);
+  transition-duration: 0.9s, 0.9s;
+}
+.wi-list .reveal.in-view {
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wi-list .reveal {
+    transform: none;
+  }
+}
+
+/* ---------- the site's mouse pointer (see components/Cursor.jsx) ---------- */
+html.has-cursor,
+html.has-cursor * {
+  cursor: none !important;
+}
+/* the enlarged-picture dialog sits above everything, so the normal pointer comes back there */
+html.has-cursor:has(dialog[open]),
+html.has-cursor:has(dialog[open]) * {
+  cursor: auto !important;
+}
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 400;
+  pointer-events: none;
+}
+.cursor-body {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 2px solid var(--bg);
+  border-radius: 999px;
+  background: var(--accent); /* same colour as the surname in the hero */
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  translate: -50% -50%;
+  scale: 0;
+  opacity: 0;
+  rotate: 0deg;
+  transition: scale 0.25s var(--ease), opacity 0.2s ease, min-width 0.25s var(--ease), height 0.25s var(--ease),
+    padding 0.25s var(--ease), border-radius 0.25s var(--ease), rotate 0.25s var(--ease), background-color 0.2s;
+}
+.cursor[data-mode="dot"] .cursor-body {
+  scale: 1;
+  opacity: 1;
+}
+.cursor[data-mode="link"] .cursor-body {
+  scale: 1;
+  opacity: 1;
+  min-width: 42px;
+  height: 42px;
+  background: transparent;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--bg);
+}
+.cursor[data-mode="label"] .cursor-body {
+  scale: 1;
+  opacity: 1;
+  min-width: 0;
+  height: auto;
+  padding: 8px 14px;
+  border-radius: 8px;
+  rotate: -4deg;
+}
+.cursor.press .cursor-body {
+  scale: 0.8;
+}
+@media (hover: none), (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor-body {
+    transition-duration: 0.2s !important;
+  }
+}

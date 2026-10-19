@@ -2,8 +2,11 @@ import { useEffect, useRef, useState } from "react";
 
 const hasObserver = () => typeof window !== "undefined" && "IntersectionObserver" in window;
 
-/** Becomes true once the element has scrolled into view. Without IntersectionObserver it starts visible. */
-export function useInView(options = { threshold: 0.15, rootMargin: "0px 0px -6% 0px" }) {
+/**
+ * Becomes true once the element has scrolled into view. With `repeat` it follows the element: false again when it
+ * leaves the screen, true when it comes back. Without IntersectionObserver it starts visible.
+ */
+export function useInView(options = { threshold: 0.15, rootMargin: "0px 0px -6% 0px" }, repeat = false) {
   const ref = useRef(null);
   const [inView, setInView] = useState(() => !hasObserver());
 
@@ -14,7 +17,9 @@ export function useInView(options = { threshold: 0.15, rootMargin: "0px 0px -6% 
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setInView(true);
-          observer.disconnect();
+          if (!repeat) observer.disconnect();
+        } else if (repeat) {
+          setInView(false);
         }
       });
     }, options);

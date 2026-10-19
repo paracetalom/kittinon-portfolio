@@ -1,13 +1,12 @@
 import { createContext, useCallback, useContext, useMemo, useState } from "react";
 import { projects } from "./data/projects";
+import { slowScrollTo } from "./hooks/smoothScroll";
 
 const PortfolioContext = createContext(null);
 
 function scrollToId(id) {
   const el = document.getElementById(id);
-  if (!el) return;
-  const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+  if (el) slowScrollTo(el);
 }
 
 /** Filters and selection shared by the hero index, the skills grid and the project explorer. */

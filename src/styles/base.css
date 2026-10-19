@@ -55,7 +55,7 @@
   transform: none;
 }
 .sechead h2 {
-  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  font-size: clamp(2.4rem, 4.8vw, 4.6rem);
   font-weight: 600;
 }
 
@@ -104,7 +104,7 @@
   color: var(--accent-ink);
 }
 .btn-solid:hover {
-  background: #a0ecf8;
+  background: var(--pop);
 }
 .btn-line {
   border-color: var(--line-strong);
@@ -193,44 +193,44 @@
 }
 .badge-live i {
   background: var(--live);
-  box-shadow: 0 0 0 0 rgba(99, 214, 165, 0.6);
+  box-shadow: 0 0 0 0 rgba(10, 122, 80, 0.6);
   animation: ping 2.4s infinite;
 }
 .badge-live {
   color: var(--live);
-  border-color: rgba(99, 214, 165, 0.4);
+  border-color: rgba(10, 122, 80, 0.4);
 }
 .badge-prototype i {
   background: var(--proto);
 }
 .badge-prototype {
   color: var(--proto);
-  border-color: rgba(240, 185, 79, 0.4);
+  border-color: rgba(138, 90, 0, 0.4);
 }
 .badge-documents i {
   background: var(--docs);
 }
 .badge-documents {
   color: var(--docs);
-  border-color: rgba(143, 166, 255, 0.4);
+  border-color: rgba(53, 71, 201, 0.4);
 }
 .badge-design i {
   background: var(--design);
 }
 .badge-design {
   color: var(--design);
-  border-color: rgba(185, 162, 255, 0.4);
+  border-color: rgba(114, 52, 201, 0.4);
 }
 .badge-reading {
   color: var(--read);
 }
 @keyframes ping {
   0% {
-    box-shadow: 0 0 0 0 rgba(99, 214, 165, 0.55);
+    box-shadow: 0 0 0 0 rgba(10, 122, 80, 0.55);
   }
   70%,
   100% {
-    box-shadow: 0 0 0 8px rgba(99, 214, 165, 0);
+    box-shadow: 0 0 0 8px rgba(10, 122, 80, 0);
   }
 }
 
@@ -248,5 +248,5 @@
   font-family: var(--font-mono);
   font-size: 0.74rem;
   color: var(--muted);
-  background: rgba(17, 30, 54, 0.5);
+  background: var(--veil);
 }
