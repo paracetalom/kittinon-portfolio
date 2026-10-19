@@ -72,7 +72,7 @@ export default function Hero() {
 
 
   // The colour band drifts on its own and speeds up with the scroll speed; it runs backwards when scrolling up.
-  // With reduced motion it only moves while the visitor scrolls.
+  // With reduced motion it still drifts, but slowly and steadily: no speed-up and no change of direction.
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -90,20 +90,19 @@ export default function Hero() {
       track.style.transform = `translate3d(${-x}px, 0, 0)`;
     };
 
-    const onScrollStatic = () => {
-      x += (window.scrollY - lastY) * 0.6;
-      lastY = window.scrollY;
-      apply();
-    };
     const frame = (now) => {
       raf = 0;
       const dt = Math.min(now - last, 64) / 1000;
       last = now;
       const dy = window.scrollY - lastY;
       lastY = window.scrollY;
-      vel += (dy - vel) * 0.12;
-      if (Math.abs(vel) > 0.6) dir = vel > 0 ? 1 : -1;
-      x += dir * (50 + Math.min(Math.abs(vel), 60) * 28) * dt;
+      if (reduced) {
+        x += 32 * dt;
+      } else {
+        vel += (dy - vel) * 0.12;
+        if (Math.abs(vel) > 0.6) dir = vel > 0 ? 1 : -1;
+        x += dir * (50 + Math.min(Math.abs(vel), 60) * 28) * dt;
+      }
       apply();
       if (visible) raf = requestAnimationFrame(frame);
     };
@@ -116,21 +115,16 @@ export default function Hero() {
     };
 
     let observer;
-    if (reduced) {
-      window.addEventListener("scroll", onScrollStatic, { passive: true });
-    } else {
-      if ("IntersectionObserver" in window) {
-        observer = new IntersectionObserver(([entry]) => {
-          visible = entry.isIntersecting;
-          if (visible) start();
-        });
-        observer.observe(track.parentElement);
-      }
-      start();
+    if ("IntersectionObserver" in window) {
+      observer = new IntersectionObserver(([entry]) => {
+        visible = entry.isIntersecting;
+        if (visible) start();
+      });
+      observer.observe(track.parentElement);
     }
+    start();
     return () => {
       cancelAnimationFrame(raf);
-      window.removeEventListener("scroll", onScrollStatic);
       observer && observer.disconnect();
     };
   }, [reduced]);
