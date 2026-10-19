@@ -13,14 +13,40 @@
     links[]   { label, href }
 */
 import smartbinDemo from "../assets/projects/smartbin-demo.jpg";
+import smartbinPet from "../assets/projects/smartbin-detect-pet.jpg";
+import smartbinHdpe from "../assets/projects/smartbin-detect-hdpe.jpg";
+import smartbinInfo from "../assets/projects/smartbin-info-tab.jpg";
+import fruitShop from "../assets/projects/fruit-shop-running.jpg";
 import lolObjectives from "../assets/projects/lol-objectives-win-rate.png";
 import lolTurret from "../assets/projects/lol-turret-win-rate.png";
-import blenderScene from "../assets/projects/blender-scene.png";
-import tetrisMenu from "../assets/projects/tetris-menu.png";
-import tetrisGame from "../assets/projects/tetris-game.png";
-import maskMethod from "../assets/projects/mask-method.png";
+import lolBanned from "../assets/projects/lol-banned-champions.jpg";
+import lolTopWin from "../assets/projects/lol-top-winrate-champions.jpg";
+import lolScatter from "../assets/projects/lol-meta-scatter.jpg";
+import lolHeatmap from "../assets/projects/lol-heatmap.jpg";
+import lolDatasets from "../assets/projects/lol-datasets.jpg";
+import blenderSofa from "../assets/projects/blender-sofa.jpg";
+import tetrisControls from "../assets/projects/tetris-controls.jpg";
+import tetrisHowto from "../assets/projects/tetris-howto.jpg";
+import tetrisHold from "../assets/projects/tetris-hold.jpg";
+import tetrisNext from "../assets/projects/tetris-next-panel.jpg";
+import tetrisMenu from "../assets/projects/tetris-menu-slide.jpg";
+import maskExample from "../assets/projects/mask-example-output.jpg";
+import maskPass from "../assets/projects/mask-pass-cases.jpg";
+import maskFail from "../assets/projects/mask-fail-analysis.jpg";
+import maskCode from "../assets/projects/mask-matlab-code.jpg";
+import maskFlow from "../assets/projects/mask-method-flow.jpg";
+import maskChart from "../assets/projects/mask-test-chart.jpg";
+import handsIntro from "../assets/projects/hands-intro.jpg";
+import handsExplicit from "../assets/projects/hands-explicit.jpg";
+import handsModelFree from "../assets/projects/hands-model-free.jpg";
+import handsDataset from "../assets/projects/hands-dataset.jpg";
 import dbEr from "../assets/projects/db-er-diagram.png";
-import chitraladaPlan from "../assets/projects/chitralada-work-plan.png";
+import dbRdm from "../assets/projects/db-relational-model.jpg";
+import dbNorm from "../assets/projects/db-normalization.jpg";
+import dbWorkbench from "../assets/projects/db-mysql-workbench.jpg";
+import dbQueries from "../assets/projects/db-sql-queries.jpg";
+import chitraladaHome from "../assets/projects/chitralada-figma-home.jpg";
+import chitraladaProducts from "../assets/projects/chitralada-figma-products.jpg";
 
 export const projects = [
   {
@@ -44,7 +70,12 @@ export const projects = [
     ],
     tech: ["HTML", "CSS", "JavaScript", "TensorFlow.js", "Teachable Machine"],
     skills: ["HTML", "CSS", "JavaScript", "Git / GitHub"],
-    media: [{ src: smartbinDemo, alt: "SmartBin on a phone: a PET bottle detected as PET at 93 percent", caption: "The app on a phone, classifying a PET bottle", frame: "phone" }],
+    media: [
+      { src: smartbinDemo, alt: "SmartBin on a phone: a PET bottle detected as PET at 93 percent", caption: "The app on a phone, classifying a PET bottle", frame: "phone" },
+      { src: smartbinPet, alt: "SmartBin camera view: a water bottle detected as PET at 99 percent", caption: "Detection: a water bottle, PET 99%", frame: "phone" },
+      { src: smartbinHdpe, alt: "SmartBin camera view: a red medicine bottle detected as HDPE at 97 percent", caption: "Detection: a medicine bottle, HDPE 97%", frame: "phone" },
+      { src: smartbinInfo, alt: "SmartBin plastic information tab with PET, HDPE and Other lists and reasons to sort waste", caption: "The plastic information tab (in Thai)", frame: "phone" },
+    ],
     docs: [{ label: "Group report", file: "smartbin-report.pdf", note: "35 pages, Project Management and Digital Startup. Cover and contact pages removed." }],
     links: [
       { label: "Live demo", href: "https://paracetalom.github.io/smart_bin_final/" },
@@ -73,6 +104,14 @@ export const projects = [
     tech: ["HTML", "CSS", "JavaScript", "Spring Boot", "Thymeleaf", "MySQL"],
     skills: ["HTML", "CSS", "JavaScript", "Spring Boot", "SQL", "Git / GitHub"],
     media: [
+      {
+        kind: "video",
+        youtubeId: "k_9OcUKdEYA",
+        poster: fruitShop,
+        alt: "Walkthrough video of the Fruit Web Application and my weekly progress",
+        caption: "Walkthrough video: the shop pages and the Spring Boot page (YouTube)",
+      },
+      { src: fruitShop, alt: "The fruit shop home page running locally, with a product list and the Fruit List from Spring Boot below", caption: "The shop running on my machine (frame from the walkthrough video)", frame: "window" },
       {
         kind: "diagram",
         id: "spring-flow",
@@ -109,8 +148,13 @@ export const projects = [
     tech: ["Python", "Jupyter Notebook", "pandas", "NumPy", "Matplotlib", "Seaborn"],
     skills: ["Python", "Jupyter Notebook"],
     media: [
+      { src: lolBanned, alt: "Slide: bar chart of the ten most banned champions in 2017 to 2018", caption: "Most banned champions, 2017–2018", frame: "window" },
+      { src: lolTopWin, alt: "Slide: bar chart of the ten champions with the highest win rate", caption: "Highest win-rate champions (min. 100 games)", frame: "window" },
+      { src: lolScatter, alt: "Slide: scatter plot of champion ban count against win rate", caption: "Meta champions: ban count vs win rate", frame: "window" },
       { src: lolObjectives, alt: "Line chart: win rate by number of towers, kills, dragons and barons secured before minute 30", caption: "Win rate by objectives secured before minute 30", frame: "window" },
       { src: lolTurret, alt: "Bar chart: win rate by tower type", caption: "Win rate by tower type", frame: "window" },
+      { src: lolHeatmap, alt: "Slide: correlation heatmap of objectives before minute 30 and the win result", caption: "Correlation heatmap of early objectives", frame: "window" },
+      { src: lolDatasets, alt: "Slide: preview of the match data tables from the Kaggle dataset", caption: "The match dataset (Kaggle)", frame: "window" },
     ],
     docs: [{ label: "Analysis slides", file: "lol-data-science.pdf", note: "26 slides, in Thai. Title slide with names removed." }],
     links: [],
@@ -133,7 +177,7 @@ export const projects = [
     ],
     tech: ["Blender", "JavaScript", "Three.js"],
     skills: ["Blender", "JavaScript", "Git / GitHub"],
-    media: [{ src: blenderScene, alt: "A 3D scene with a red backdrop, a ball and a black cat", caption: "Second scene of the live page", frame: "window" }],
+    media: [{ src: blenderSofa, alt: "A 3D character sitting on a red sofa in front of a white backdrop in a photo studio", caption: "The first scene of the live page: a character sitting in a photo studio", frame: "window" }],
     docs: [],
     links: [
       { label: "Live page", href: "https://kittinol.github.io/Portfolio_bleneder/" },
@@ -159,7 +203,14 @@ export const projects = [
     ],
     tech: ["MATLAB", "Image processing"],
     skills: ["MATLAB"],
-    media: [{ src: maskMethod, alt: "Flow diagram of the mask detection method from the report", caption: "Method diagram from the report", frame: "window" }],
+    media: [
+      { src: maskExample, alt: "Report page: two example photos shown as the original image, the blue-mask image and the result, one with Mask Detected and one with No Mask Detected", caption: "How a photo is tested: original, blue-mask image, result", frame: "window" },
+      { src: maskPass, alt: "Report page: four test photos with a mask that were detected correctly, with notes", caption: "Photos with a mask that were detected correctly", frame: "window" },
+      { src: maskFail, alt: "Report page: test photos with a mask that were not detected, with notes on why", caption: "Where it failed: the notes explain each error", frame: "window" },
+      { src: maskChart, alt: "Bar chart of the experiment: of 40 photos with a mask, 13 were detected correctly and 27 wrongly; of 40 photos without a mask, 16 correct and 24 wrong", caption: "Test result: 13 of 40 mask photos and 16 of 40 no-mask photos correct", frame: "window" },
+      { src: maskCode, alt: "MATLAB source code that joins the colour masks and decides between Mask Detected and No Mask Detected", caption: "The MATLAB decision code", frame: "window" },
+      { src: maskFlow, alt: "Flow diagram of the mask detection method with the steps for choosing the photos", caption: "Method: from the Kaggle dataset to the result", frame: "window" },
+    ],
     docs: [{ label: "Report excerpt", file: "mask-detection-report-excerpt.pdf", note: "7 of 83 pages, in Thai. The pages with stock photos and the cover are left out." }],
     links: [],
   },
@@ -182,7 +233,13 @@ export const projects = [
     ],
     tech: ["MySQL", "SQL", "ER diagram"],
     skills: ["SQL"],
-    media: [{ src: dbEr, alt: "ER diagram of the product-selling database", caption: "ER diagram from my section of the report", frame: "window" }],
+    media: [
+      { src: dbNorm, alt: "Normalization to 1NF: order tables with repeating product groups split into atomic rows", caption: "Normalization (1NF)", frame: "window" },
+      { src: dbEr, alt: "ER diagram of the product-selling database", caption: "ER diagram from my section of the report", frame: "window" },
+      { src: dbRdm, alt: "Relational database model with the tables for customers, cards, orders, payments and products", caption: "Relational model", frame: "window" },
+      { src: dbWorkbench, alt: "MySQL Workbench: CREATE TABLE and INSERT statements for the Products table and the resulting rows", caption: "MySQL script and the resulting Products table", frame: "window" },
+      { src: dbQueries, alt: "Two of the ten example SQL queries with their result tables", caption: "Example SQL queries and their results", frame: "window" },
+    ],
     docs: [{ label: "Report: my section", file: "commodity-trading-database-report.pdf", note: "76 pages, in Thai. Cover and the other members' sections left out." }],
     links: [],
   },
@@ -200,14 +257,18 @@ export const projects = [
     role: "Built with classmates; the work was shared without fixed roles.",
     facts: [
       "Start menu with 1 Player, 2 Players and Exit.",
+      "In two-player mode both players share one keyboard: player 1 plays on W A S D and player 2 on the arrow keys.",
       "A Hold function, a next-piece panel and scoring by cleared rows, as shown in the project slides.",
       "It is a desktop Java program (Swing), so there is no online demo. The source is on GitHub.",
     ],
     tech: ["Java", "Java Swing"],
     skills: ["Java", "Git / GitHub"],
     media: [
-      { src: tetrisMenu, alt: "Start menu of the Tetris game with 1 Player, 2 Players and Exit", caption: "Start menu", frame: "window" },
-      { src: tetrisGame, alt: "The Tetris game window with falling blocks and a next-piece panel", caption: "Game window", frame: "window" },
+      { src: tetrisControls, alt: "Slide: keyboard controls for player 1 on W A S D and player 2 on the arrow keys", caption: "Two players share the keyboard: W A S D and the arrow keys", frame: "window" },
+      { src: tetrisHowto, alt: "Slide: how to play, with a game window and falling pieces", caption: "How to play", frame: "window" },
+      { src: tetrisHold, alt: "Slide: the Hold function, showing a piece moved into the hold box", caption: "The Hold function", frame: "window" },
+      { src: tetrisNext, alt: "Slide: the next-piece panel and the seven piece shapes in colour", caption: "Next-piece panel", frame: "window" },
+      { src: tetrisMenu, alt: "Slide: start menu of the game with 1 Player, 2 Players and Exit", caption: "Start menu", frame: "window" },
     ],
     docs: [{ label: "Project slides", file: "tetris-slides.pdf", note: "22 slides, in Thai. Member list slide removed." }],
     links: [{ label: "GitHub", href: "https://github.com/paracetalom/Tetris" }],
@@ -227,13 +288,16 @@ export const projects = [
     facts: [
       "It started from a group proposal called \"Royal Garden\": add online sales channels for products from the Chitralada project.",
       "The proposal planned seven weeks: preparation and planning, building the site, then evaluation.",
-      "I have no public Figma link or screenshots of the screens yet.",
+      "The Figma prototype is linked below. The screens here are its products page, taken from the prototype.",
     ],
     tech: ["Figma"],
     skills: ["Figma"],
-    media: [{ src: chitraladaPlan, alt: "Handwritten seven-week work plan from the Royal Garden proposal", caption: "Work plan from the group proposal", frame: "window" }],
+    media: [
+      { src: chitraladaHome, alt: "Figma prototype: the top of the products page, with the logo, a log-in bar and a photo of ice cream cups", caption: "Figma prototype: top of the products page", frame: "window" },
+      { src: chitraladaProducts, alt: "Figma prototype: a grid of product photos with food and other-product category buttons", caption: "Figma prototype: product photo grid", frame: "window" },
+    ],
     docs: [{ label: "Proposal: work plan page", file: "chitralada-garden-proposal-page.pdf", note: "1 page, handwritten, in Thai. The member list page is left out." }],
-    links: [],
+    links: [{ label: "Figma prototype", href: "https://www.figma.com/proto/JYuL63xCQzpKsy7jq9vFZ2?node-id=0-1" }],
   },
   {
     id: "research-hands",
@@ -252,7 +316,12 @@ export const projects = [
     ],
     tech: ["Computer vision", "Deep learning"],
     skills: [],
-    media: [],
+    media: [
+      { src: handsIntro, alt: "Seminar slide: introduction with applications of hand reconstruction", caption: "Introduction", frame: "window" },
+      { src: handsExplicit, alt: "Seminar slide: explicit hand representation, with hand model figures", caption: "Explicit representation", frame: "window" },
+      { src: handsModelFree, alt: "Seminar slide: the model-free approach with intermediate hand images", caption: "Model-free approach", frame: "window" },
+      { src: handsDataset, alt: "Seminar slide: datasets used for interacting hands", caption: "Datasets", frame: "window" },
+    ],
     docs: [{ label: "My seminar slides", file: "interacting-hands-seminar-slides.pdf", note: "18 slides, in Thai. Title and closing slides removed." }],
     links: [{ label: "Source paper (DOI)", href: "https://doi.org/10.1016/j.cag.2024.104102" }],
   },
